@@ -1,0 +1,23 @@
+:root {
+    --color-text-blue: hsl(238, 29%, 16%);
+    --color-text-red: hsl(14, 88%, 65%);
+    --color-gradient-violet: hsl(273, 75%, 66%);
+    --color-gradient-blue: hsl(240, 73%, 65%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 1.2rem;
+    background: linear-gradient(var(--color-gradient-violet), var(--color-gradient-blue));
+}
