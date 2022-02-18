@@ -116,6 +116,11 @@ body {
         padding: 8rem 0;
         position: relative;
         text-align: left;
+
+        background-image: url(./images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: -58rem -28rem;
     }
 
     .card__image, .card__text {
