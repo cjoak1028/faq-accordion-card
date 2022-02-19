@@ -11,6 +11,7 @@
 html {
     font-size: 62.5%;
     box-sizing: content-box;
+    overflow: auto;
 }
 
 * {
@@ -22,37 +23,58 @@ html {
 body {
     font-size: 1.2rem;
     font-family: 'Kumbh Sans', sans-serif;
-    top: 0;
     min-height: 100vh;
-    background: linear-gradient(var(--c-grad-violet), var(--c-grad-blue));
     padding: 2.4rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center
+    background: linear-gradient(var(--c-grad-violet), var(--c-grad-blue));
+    overflow: inherit;
 }
 
 .card {
     background-color: white;
-    width: 100%;
     max-width: 92rem;
     border-radius: 2.3rem;
     padding: 0 2.4rem 4.8rem 2.4rem;
     text-align: center;
+    margin: auto;
+    margin-top: 14.8rem;
+
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center 0;
 }
 
-.card__image, .card__text {
-    width: 100%;
+.card__text {
+    display: inline-block;
+    margin-top: 13.2rem;
 }
 
-.overflow-container {
-    overflow: hidden;
+.card__image {
+    display: block;
 }
 
-.overflow-container img {
+.img-container {
+    margin: auto;
+    max-width: 23.7rem;
+    position: relative;
+}
+
+.img-mobile {
+    position: absolute;
+    transform: translateY(-59%);
+}
+
+.img-container img {
     width: 100%;
     height: auto;
-    max-width: 47.2rem;
+}
+
+.img-mobile {
+    display: block;
+}
+
+.img-desktop {
+    display: none;
 }
 
 .card__text h1 {
@@ -107,7 +129,7 @@ body {
 
 @media only screen and (min-width: 60em) {
     body {
-        padding: 0 6rem;
+        padding: 0 5rem;
     }
 
     .card {
@@ -118,8 +140,6 @@ body {
         text-align: left;
 
         background-image: url(./images/bg-pattern-desktop.svg);
-        background-repeat: no-repeat;
-        background-size: auto;
         background-position: -58rem -28rem;
     }
 
@@ -138,12 +158,23 @@ body {
         top: 37%;
     }
 
-    .overflow-container img {
+    .img-desktop {
+        display: block;
         transform: translateX(-16%);
+    }
+
+    .img-mobile {
+        display: none;
+    }
+
+    .img-container {
+        max-width: 47.2rem;
+        overflow: hidden;
     }
 
     .card__text {
         padding-left: 1.5rem;
+        margin-top: 0;
     }
 
     .accordion__item {
