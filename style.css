@@ -37,6 +37,7 @@ body {
     text-align: center;
     margin: auto;
     margin-top: 14.8rem;
+    margin-bottom: 14.8rem;
 
     background-image: url(./images/bg-pattern-mobile.svg);
     background-repeat: no-repeat;
@@ -46,6 +47,7 @@ body {
 
 .card__text {
     display: inline-block;
+    width: 100%;
     margin-top: 13.2rem;
 }
 
@@ -62,15 +64,12 @@ body {
 .img-mobile {
     position: absolute;
     transform: translateY(-59%);
+    display: block;
 }
 
 .img-container img {
     width: 100%;
     height: auto;
-}
-
-.img-mobile {
-    display: block;
 }
 
 .img-desktop {
@@ -93,17 +92,9 @@ body {
 }
 
 .accordion__item {
+    display: block;
     padding-bottom: 1.5rem;
-    padding-right: 1.6rem;
     border-bottom: 1px solid var(--c-div-blue-light);
-}
-
-.arrow-down {
-    margin-left: 1.5rem;
-}
-
-.collapsed {
-    height: 0;
 }
 
 .accordion__question {
@@ -111,22 +102,55 @@ body {
     justify-content: space-between;
     align-items: center;
     color: var(--c-text-blue-darker);
+    font-family: inherit;
     font-size: 1.3rem;
+    width: 100%;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.accordion__question img {
+    margin-left: 1.5rem;
+    transition: transform 300ms ease-in-out;
+}
+
+.accordion__question.open p {
+    font-weight: 700;
+}
+
+.accordion__question.open img {
+    transform: rotate(180deg);
 }
 
 .accordion__answer {
-    overflow: hidden;
     color: var(--c-text-blue-dark);
     margin-top: 1.1rem;
     padding-right: .8rem;
     line-height: 1.8rem;
     font-weight: 400;
+
+    transition: height 200ms ease-in-out;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+}
+
+.collapse {
+    display: none;
+}
+
+.accordion__answer.open {
+    display: block;
 }
 
 .hide-for-mobile {
     display: none;
 }
 
+/*DESKTOP*/
 @media only screen and (min-width: 60em) {
     body {
         padding: 0 5rem;
@@ -145,6 +169,10 @@ body {
 
     .card__image, .card__text {
         flex: 1;
+    }
+
+    .card__text {
+        display: inline-block;
     }
 
     .card__image {
@@ -179,6 +207,7 @@ body {
 
     .accordion__item {
         max-width: 35rem;
+        padding-right: 1.6rem;
     }
 
     .accordion__question {
